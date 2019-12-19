@@ -6,74 +6,74 @@
 /*   By: mourdani <mourdani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/27 16:57:10 by mourdani          #+#    #+#             */
-/*   Updated: 2019/12/18 06:40:10 by mourdani         ###   ########.fr       */
+/*   Updated: 2019/12/19 01:02:48 by mourdani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(char const *str, char c)
+static int	cwords(char const *str, char c)
 {
-	int	count;
+	int	cnt;
 
-	count = 0;
+	cnt = 0;
 	while (*str)
 	{
 		while (*str && (*str == c))
 			str++;
 		if (*str && *str != c)
 		{
-			count++;
+			cnt++;
 			while (*str && *str != c)
 				str++;
 		}
 	}
-	return (count);
+	return (cnt);
 }
 
-static char	**ft_duty_free(char **ptr_ptr, int words)
+static char	**freem(char **str, int a)
 {
 	int	i;
 
 	i = 0;
-	while (*ptr_ptr[i] && i < words)
-		free((void *)ptr_ptr[i++]);
-	if (ptr_ptr)
-		free((void *)ptr_ptr);
+	while (*str[i] && i < a)
+		free((void *)str[i++]);
+	if (str)
+		free((void *)str);
 	return (NULL);
 }
 
-static char	*malloc_word(char const *str, char c)
+static char	*mword(char const *str, char c)
 {
 	char	*word;
-	int		count;
+	int		cnt;
 
-	count = 0;
-	while (str[count] && str[count] != c)
-		count++;
-	if (!(word = (char *)malloc(sizeof(char) * (count + 1))))
+	cnt = 0;
+	while (str[cnt] && str[cnt] != c)
+		cnt++;
+	if (!(word = (char *)malloc(sizeof(char) * (cnt + 1))))
 		return (NULL);
-	count = 0;
-	while (str[count] && str[count] != c)
+	cnt = 0;
+	while (str[cnt] && str[cnt] != c)
 	{
-		word[count] = str[count];
-		count++;
+		word[cnt] = str[cnt];
+		cnt++;
 	}
-	word[count] = '\0';
+	word[cnt] = '\0';
 	return (word);
 }
 
 char		**ft_split(char const *s, char c)
 {
-	int		words;
+	int		a;
 	int		i;
 	char	**tab;
 
 	i = 0;
 	if (!s)
 		return (NULL);
-	words = count_words(s, c);
-	if (!(tab = (char **)malloc(sizeof(char*) * (words + 1))))
+	a = cwords(s, c);
+	if (!(tab = (char **)malloc(sizeof(char*) * (a + 1))))
 		return (NULL);
 	while (*s)
 	{
@@ -81,8 +81,8 @@ char		**ft_split(char const *s, char c)
 			s++;
 		if (*s && *s != c)
 		{
-			if (!(tab[i++] = malloc_word(s, c)))
-				return (ft_duty_free(tab, --i));
+			if (!(tab[i++] = mword(s, c)))
+				return (freem(tab, --i));
 			while (*s && *s != c)
 				s++;
 		}

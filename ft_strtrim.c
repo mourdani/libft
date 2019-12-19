@@ -6,52 +6,51 @@
 /*   By: mourdani <mourdani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 03:50:32 by mourdani          #+#    #+#             */
-/*   Updated: 2019/12/04 03:07:30 by mourdani         ###   ########.fr       */
+/*   Updated: 2019/12/19 00:56:37 by mourdani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
-int		cmpc(char c, char *set)
+static char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
-	while (set[i])
+	while (src[i] && i < n)
 	{
-		if (set[i] == c)
-			return (1);
+		dest[i] = src[i];
 		i++;
 	}
-	return (0);
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		a;
-	int		j;
-	char	*str;
+	size_t	i;
+	size_t	a;
+	char	*res;
 
 	i = 0;
-	j = 0;
-	a = ft_strlen(s1) - 1;
-	while (cmpc(s1[i], (char*)set))
+	if (!s1 || !set)
+		return (NULL);
+	while (s1[i] != '\0' && ft_strchr(set, s1[i]) != NULL)
 		i++;
-	if (i == a + 1)
-		return ("");
-	while (cmpc(s1[a], (char*)set))
-		a--;
-	if (!(str = (char *)malloc((a - i + 2) * sizeof(char))))
-		return (0);
-	while (i <= a)
+	a = ft_strlen(s1 + i);
+	if (a != 0)
 	{
-		str[j] = s1[i];
-		i++;
-		j++;
+		while (s1[a + i - 1] && ft_strchr(set, s1[a + i - 1]) != NULL)
+			a--;
 	}
-	str[j] = '\0';
-	return (str);
+	res = (char*)malloc(sizeof(*res) * (a + 1));
+	if (res == NULL)
+		return (NULL);
+	res = ft_strncpy(res, (s1 + i), a);
+	res[a] = '\0';
+	return (res);
 }
