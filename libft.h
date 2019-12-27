@@ -6,7 +6,7 @@
 /*   By: mourdani <mourdani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 06:27:04 by mourdani          #+#    #+#             */
-/*   Updated: 2019/12/18 06:37:34 by mourdani         ###   ########.fr       */
+/*   Updated: 2019/12/27 10:39:09 by mourdani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char				*ft_strnstr(const char *s1, const char *s2,
 					size_t n);
 int					ft_atoi(const char *str);
 void				*ft_calloc(size_t count, size_t size);
-char				*ft_strdup(char *src);
+char				*ft_strdup(const char *src);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);

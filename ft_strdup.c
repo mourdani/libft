@@ -6,14 +6,14 @@
 /*   By: mourdani <mourdani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 01:01:27 by mourdani          #+#    #+#             */
-/*   Updated: 2019/12/18 01:11:43 by mourdani         ###   ########.fr       */
+/*   Updated: 2019/12/27 10:35:29 by mourdani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	char	*str;
 	int		i;

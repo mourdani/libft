@@ -6,7 +6,7 @@
 /*   By: mourdani <mourdani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 03:50:32 by mourdani          #+#    #+#             */
-/*   Updated: 2019/12/19 00:56:37 by mourdani         ###   ########.fr       */
+/*   Updated: 2019/12/19 01:24:57 by mourdani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 		while (s1[a + i - 1] && ft_strchr(set, s1[a + i - 1]) != NULL)
 			a--;
 	}
-	res = (char*)malloc(sizeof(*res) * (a + 1));
+	if (!(res = (char*)malloc(sizeof(*res) * (a + 1))))
+		return (NULL);
 	if (res == NULL)
 		return (NULL);
 	res = ft_strncpy(res, (s1 + i), a);

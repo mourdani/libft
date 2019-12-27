@@ -38,7 +38,7 @@ SOURCES = ft_memset.c	\
 
 HEADERS = libft.h
 OBJECT = $(SOURCES:.c=.o)
-$(NAME):
+$(NAME): $(OBJECT)
 	$(CC) $(FLAGS) -c $(SOURCES)
 	ar rc $(NAME) $(OBJECT)
 	ranlib $(NAME)
