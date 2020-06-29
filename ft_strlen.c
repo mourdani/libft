@@ -12,6 +12,14 @@
 
 #include "libft.h"
 
+/*
+** Recoded strlen libc function: Computes the length of the string s
+**
+** s: The string whose length is to be found
+**
+** returns: The number of characters that precede the terminating NULL character
+*/
+
 size_t	ft_strlen(const char *str)
 {
 	size_t i;
