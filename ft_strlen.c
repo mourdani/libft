@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /*
-** Recoded strlen libc function: Computes the length of the string s
+** Function: Computes the length of the string s
 **
 ** s: The string whose length is to be found
 **
