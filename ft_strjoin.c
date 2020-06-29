@@ -12,6 +12,17 @@
 
 #include "libft.h"
 
+/*
+** Function: Allocates (with malloc(3)) and returns a new string, result of the
+** concatenation of s1 and s2
+**
+** s1: The prefix string
+** s2: The suffix string
+**
+** returns: The new string
+**          NULL otherwise
+*/
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
