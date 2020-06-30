@@ -12,6 +12,16 @@
 
 #include <string.h>
 
+/*
+** Recoded memcpy libc function: Copies n bytes from memory area src to dst
+**
+** dst: The pointer to the destination array where the content is to be copied
+** src: The pointer to the source of data to be copied
+** n: The maximum number of bytes to copy
+**
+** returns: The original value of dst
+*/
+
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*str1;
