@@ -12,6 +12,19 @@
 
 #include <string.h>
 
+/*
+** Recoded memccpy libc function: Copies bytes from memory area src to dest
+** stopping after the first occurrence of c or n bytes have been copied
+**
+** dest: The pointer to the destination array where the content is to be copied
+** src: The pointer to the source of data to be copied
+** c: The value to stop copying at
+** n: The maximum number of bytes to copy
+**
+** returns: A pointer to the first byte after c in dst
+**          NULL otherwise
+*/
+
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	unsigned char	*s1;
