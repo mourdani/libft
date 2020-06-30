@@ -13,9 +13,9 @@
 #include <string.h>
 
 /*
-** Recoded memcpy libc function: Copies n bytes from memory area src to dst
+** Recoded memcpy libc function: Copies n bytes from memory area src to dest
 **
-** dst: The pointer to the destination array where the content is to be copied
+** dest: The pointer to the destination array where the content is to be copied
 ** src: The pointer to the source of data to be copied
 ** n: The maximum number of bytes to copy
 **
