@@ -12,6 +12,17 @@
 
 #include "libft.h"
 
+/*
+** Recoded strlcpy libc function: Copies up to size − 1 characters from
+** the NULL-terminated string src to dest, NULL-terminating the result
+**
+** dest: A pointer to the destination string
+** src: A pointer to the source string
+** size: The size of the destination buffer
+**
+** returns: The total length of src
+*/
+
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
