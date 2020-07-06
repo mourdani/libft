@@ -13,6 +13,18 @@
 #include <stdlib.h>
 #include "libft.h"
 
+/*
+** Function: Allocates (with malloc(3)) and returns a substring from the string
+** given in argument. It begins at index ’start’ and is of maximum size ’len’
+**
+** s: The string from which create the substring
+** start: The start index of the substring in the string
+** len: The maximum length of the substring
+**
+** returns: The substring
+**          NULL otherwise
+*/
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
