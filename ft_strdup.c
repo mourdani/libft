@@ -13,6 +13,16 @@
 #include "libft.h"
 #include <stdlib.h>
 
+/*
+** Recoded strdup libc function: Allocates sufficient memory for a copy of the
+** string s1, does the copy, and returns a pointer to it
+**
+** s1: The string to be copied
+**
+** returns: A pointer to the copy
+**          NULL otherwise
+*/
+
 char	*ft_strdup(const char *src)
 {
 	char	*str;
