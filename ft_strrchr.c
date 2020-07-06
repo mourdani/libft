@@ -10,6 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Recoded strchr libc function: Locates the first occurrence of c in the string
+** pointed to by s
+**
+** s: The string to be scanned
+** c: The character to be searched
+**
+** returns: A pointer to the located character
+**          NULL otherwise
+*/
+
 unsigned long	strlen(const char *str)
 {
 	unsigned long i;
